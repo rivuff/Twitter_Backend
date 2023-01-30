@@ -17,13 +17,18 @@ app.listen(3000, async ()=>{
     // })
 
     const tweetRepo = new TweetRepository();
-    // const tweet = await tweetRepo.create({content: "My first tweet"})
+    // const tweet = await tweetRepo.create({content: "My fourth tweet"})
+    // tweet.userEmail ="a@cmail.com"
+
     // console.log(tweet);
-    // const comment = await Comment.create({content: "new comment"})
+    // const comment = await Comment.create({content: "new comment fourth"})
 
     // tweet.comments.push(comment);
     // await tweet.save();
-    const tweet = await tweetRepo.getWithComments('63d4b8a37de627fd07a7a731')
+    // const tweet = await tweetRepo.getWithComments('63d4b8a37de627fd07a7a731')
+    
 
-    console.log(tweet);
+    const tweet = await tweetRepo.getAll();
+    tweet[9].userEmail = "sd@g.com"
+    console.log(tweet[9]);
 })
