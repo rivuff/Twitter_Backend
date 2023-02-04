@@ -1,5 +1,5 @@
-const {TweetRepository} = require('../repository/index')
-const {HashtagRepository} = require('../repository/index');
+import {TweetRepository, HashtagRepository} from '../repository/index.js'
+
 class TweetService{
     constructor(){
         this.tweetRepository = new TweetRepository();
@@ -26,7 +26,7 @@ class TweetService{
         })
 
         const response = await this.HashtagRepository.bulkCreate(newTags);
-        console.log(response); 
+        
 
         alreadyPresentTags.forEach((tag)=>{
             tag.tweets.push(tweet.id);
@@ -44,4 +44,4 @@ class TweetService{
     }
 }
 
-module.exports =TweetService
+export default TweetService
