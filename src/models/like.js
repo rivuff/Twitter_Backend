@@ -18,6 +18,6 @@ const likeSchema = new mongoose.model({
     }
 }, {timestamps: true})
 
-const like = mongoose.model('Like', likeSchema)
+const Like = mongoose.model('Like', likeSchema)
 
-export default like
+export default Like
