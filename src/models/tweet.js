@@ -5,9 +5,16 @@ const tweetSchema = new mongoose.Schema({
         type: String,
         required: true,
         max: [250, 'Tweet can not be more than 250 characters']
-    }
+    },
+    Like:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Like'
+        }
+        
+    ]
     
-},{timestamps: true});
+}, {timestamps: true});
 
 // tweetSchema.virtual('contentWithEmail').get(function process(){
 //     return `${this.content} \nCreated by: ${this.userEmail}`;

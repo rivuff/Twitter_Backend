@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const likeSchema = new mongoose.model({
+const likeSchema = new mongoose.Schema({
     onModel:{
         type: String,
         required: true,
@@ -12,7 +12,7 @@ const likeSchema = new mongoose.model({
         refPath: 'onModel'
     },
     user:{
-        type: mongoose.Schema.type.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     }
