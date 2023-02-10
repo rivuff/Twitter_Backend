@@ -13,6 +13,16 @@ class UserService{
             throw error;
         }
     }
+
+    async getuserByEmail(email){
+        try {
+            const response = await this.userRepository.findBy({email});
+            return response;
+        } catch (error) {
+            console.log("Something went wrong in user repository");
+            throw error
+        }
+    }
 }
 
 export default UserService
