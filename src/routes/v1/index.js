@@ -12,7 +12,7 @@ router.post('/tweets', authenticate, createTweet)
 router.post('/likes/toggle', toggleLike)
 router.get('/tweets/:id', getTweet )
 
-router.post('/comments', createComment)
+router.post('/comments',authenticate, createComment)
 
 router.post('/signup', signUp)
 router.post('/login', login)
